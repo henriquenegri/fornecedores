@@ -1,0 +1,33 @@
+﻿@model IEnumerable<fornecedores.Models.MaisFornec.Fornecedor>
+
+@{
+    ViewData["Title"] = "Lista Dos Fornecedores";
+}
+<body style="background-image:linear-gradient(blue, black); color: white">
+<div class="col-2">
+    <h1>Fornecedores</h1>
+
+    <p style="align-items: center; justify-content: center; ">
+        <a class="btn btn-success" asp-action="Create">Novo Fornecedor</a>
+    </p>
+</div>
+    <div class="row">
+    @foreach (var item in Model)
+    {
+            <div class="col-md-4 mb-3">
+            <div class="card h-100" style="color: black">
+                    <div class="card-body" style="background-color: white">
+                    <h4 class="card-title">@item.NomeFantasia</h4>
+                    <h5 class="card-subtitle mb-2 text-muted" style="color: white">@item.Nome</h5>
+                    <p class="card-text"> Email: @item.Email</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-outline-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    <a class="btn btn-danger text-white btn-sm" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+</body>

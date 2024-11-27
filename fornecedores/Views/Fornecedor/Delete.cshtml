@@ -1,0 +1,47 @@
+﻿@model fornecedores.Models.MaisFornec.Fornecedor;
+
+@{
+    ViewData["Title"] = "Excluir Fornecedor";
+}
+<body style="background-image:linear-gradient(blue, black); color: white">
+<h1>Apagar </h1>
+
+<h3>Você tem certeza que quer apagar esse fornecedor?</h3>
+<div>
+    <h4>Fornecedor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.TextBoxFor(model => model.NomeFantasia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Apagar" class="btn btn-danger btn-sm" />
+        <a class="btn btn-secondary text-white btn-sm" asp-action="Index">Voltar</a>
+    </form>
+
+</div>
+</body>
